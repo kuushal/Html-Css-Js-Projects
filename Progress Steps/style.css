@@ -1,0 +1,96 @@
+*{
+
+    box-sizing: border-box;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f6f7fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    text-align: center;  
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.progress-container::before{
+    content: '';
+    background-color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.progress{
+    background-color: #3498db;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.circle{
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #e0e0e0;
+    transition: 0.4s ease;
+}
+
+.circle.active{
+    border-color: #3498db;
+
+}
+
+.btn{
+    padding: 0.5em 2em;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    background-color:#3498db;
+    border-radius: 4px;
+    border: none;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.btn:hover,
+.btn:focus{
+    outline: none;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:disabled{
+    background-color: #999;
+    cursor: not-allowed;
+}
